@@ -1,2 +1,2 @@
 # Customer Tk menu with the option to add a large number of scripts
- cwel
+How the menu for the folder named 'displays' works: we upload .py files that will be displayed on the left side. In these files, we write the function def main(frame_right): which is responsible for displaying what will be on the right side. What we have written in the folder named 'Displays' can be used so that the code we open is independent of external factors, making it impossible to stop it in any other way than by clicking the stop button. The 'Killed process' stop button allows us to immediately stop it when clicked.
