@@ -27,15 +27,15 @@ frame_right.grid(row=0, column=1, pady=10, sticky="nsew")
 def load_modules(folder):
     modules = {}
     for filename in os.listdir(folder):
-        if filename.endswith(".py"):  # Sprawdzamy tylko pliki .py
-            module_name = filename[:-3]  # Usuwamy rozszerzenie .py
+        if filename.endswith(".py"):  
+            module_name = filename[:-3] 
             module_path = os.path.join(folder, filename)
             try:
                 # Ładowanie modułu
                 spec = importlib.util.spec_from_file_location(module_name, module_path)
                 module = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(module)
-                if hasattr(module, "main"):  # Sprawdzamy, czy moduł ma funkcję `main`
+                if hasattr(module, "main"): 
                     modules[module_name] = module.main
             except Exception as e:
                 print(f"Nie udało się załadować modułu {module_name}: {e}")
@@ -43,7 +43,6 @@ def load_modules(folder):
 
 modules = load_modules("displays")
 
-# Funkcja wywołująca funkcje z modułów
 def cwelnia(value):
     print(f"Kliknięto przycisk z wartością: {value}")
     if value in modules:
